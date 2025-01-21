@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Understanding Strings, Text Processing, and Relation with AI</title>
+    <title>Understanding Strings & Text in the Age of AI</title>
 
     <!-- Load React -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
@@ -160,174 +160,325 @@
       </button>
     </div>
 
-    <!-- Main Content Container -->
-    <div class="max-w-4xl mx-auto pt-8 px-6 pb-8">
-      <div
-        class="bg-white dark:bg-github-dark rounded-lg shadow-lg p-6 dark-transition"
-      >
-        <!-- Educational Content -->
-        <div class="prose dark:prose-invert max-w-none mb-12">
-          <h1 class="text-3xl font-bold mb-6">
-            Understanding Strings, Text Processing, and Relation with AI
-          </h1>
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto px-6 py-8">
+      <!-- Educational Content -->
+      <div class="prose dark:prose-invert max-w-none mb-12">
+        <h1 class="text-3xl font-bold mb-6">
+          Understanding Strings & Text in the Age of AI
+        </h1>
 
-          <p class="mb-4">
-            Strings are fundamental to programming in Python, playing a crucial
-            role in various aspects of software development and artificial
-            intelligence. Understanding strings is essential for several
-            reasons:
+        <p class="mb-4">
+          Strings are fundamental to programming in Python, playing a crucial
+          role in various aspects of software development and artificial
+          intelligence. Understanding strings is essential for several reasons:
+        </p>
+
+        <h2 class="text-2xl font-bold mt-6 mb-4">
+          Data Representation and Manipulation
+        </h2>
+        <p class="mb-4">
+          Strings in Python are used to represent and manipulate textual data.
+          They can contain letters, numbers, symbols, and whitespace, making
+          them versatile for handling various types of information. This
+          capability is vital for:
+        </p>
+        <ul class="list-disc pl-6 mb-4">
+          <li class="mb-2">
+            <strong>Text Processing</strong>: Strings allow you to work with
+            human-readable text, enabling tasks like parsing, formatting, and
+            analyzing textual content.
+          </li>
+          <li class="mb-2">
+            <strong>Data Input/Output</strong>: They facilitate the exchange of
+            information between users and programs, as well as between different
+            parts of a program.
+          </li>
+        </ul>
+
+        <h2 class="text-2xl font-bold mt-6 mb-4">
+          Strings in Artificial Intelligence
+        </h2>
+        <p class="mb-4">
+          String manipulation plays a crucial role in modern AI applications and
+          natural language processing:
+        </p>
+        <ul class="list-disc pl-6 mb-4">
+          <li class="mb-4">
+            <strong>Text Preprocessing</strong>: AI models require carefully
+            formatted text input. String operations are essential for:
+            <ul class="list-circle pl-6 mt-2">
+              <li>
+                <strong>Tokenization</strong> - breaking text into smaller units
+              </li>
+              <li>
+                <strong>Normalization</strong> - standardizing text format and
+                case
+              </li>
+              <li>
+                <strong>Cleaning</strong> - removing unwanted characters or
+                formatting
+              </li>
+            </ul>
+          </li>
+          <li class="mb-4">
+            <strong>Prompt Engineering</strong>: When working with large
+            language models, string formatting is crucial for:
+            <ul class="list-circle pl-6 mt-2">
+              <li>Constructing effective prompts</li>
+              <li>Formatting system instructions</li>
+              <li>Processing and validating model responses</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p class="mb-4">
+          The rise of AI and
+          <strong>natural language processing (NLP)</strong> has made string
+          manipulation more important than ever, as it forms the foundation for
+          how we prepare, process, and handle text data for AI applications.
+        </p>
+
+        <p class="mb-4">
+          <strong
+            ><em
+              >Natural Language Processing (NLP) is a branch of artificial
+              intelligence that helps computers understand, interpret, and
+              generate human language in a useful way</em
+            ></strong
+          >. It's what allows computers to read text, hear speech, understand
+          it, measure sentiment, and determine which parts are important.
+        </p>
+
+        <p class="mb-6">
+          Think of it as the technology that bridges the gap between how humans
+          communicate naturally and how computers process information. Just like
+          how we can understand this sentence in English, NLP helps computers
+          make sense of human languages.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-6 mb-4">Understanding Tokenization</h2>
+        <p class="mb-4">
+          <strong
+            >Tokenization is the process of breaking down text into smaller
+            pieces called tokens.</strong
+          >
+          Think of it like breaking a sentence into bite-sized chunks that an AI
+          model can understand. These chunks aren't always just individual words
+          - they can be parts of words, punctuation marks, or even common
+          phrases.
+        </p>
+
+        <h3 class="text-xl font-bold mt-4 mb-2">
+          Common Tokenization Methods:
+        </h3>
+        <ul class="list-disc pl-6 mb-4">
+          <li class="mb-2">
+            <strong>Word-level Tokenization</strong>: Splits text into
+            individual words based on spaces and punctuation.
+          </li>
+          <li class="mb-2">
+            <strong>Character-level Tokenization</strong>: Breaks text down into
+            individual characters.
+          </li>
+          <li class="mb-2">
+            <strong>Subword Tokenization</strong>: The most common method in
+            modern LLMs, breaking words into meaningful subunits.
+          </li>
+        </ul>
+
+        <div class="bg-blue-50 p-4 rounded-md mb-6">
+          <p class="font-semibold mb-2">Try It Out!</p>
+          <p>
+            Use the interactive Token Visualizer below to experiment with
+            different tokenization methods and see how they work in practice.
           </p>
+        </div>
+      </div>
 
-          <h2 class="text-2xl font-bold mt-6 mb-4">
-            Data Representation and Manipulation
-          </h2>
-          <p class="mb-4">
-            Strings in Python are used to represent and manipulate textual data.
-            They can contain letters, numbers, symbols, and whitespace, making
-            them versatile for handling various types of information. This
-            capability is vital for:
-          </p>
-          <ul class="list-disc pl-6 mb-4">
-            <li class="mb-2">
-              <strong>Text Processing</strong>: Strings allow you to work with
-              human-readable text, enabling tasks like parsing, formatting, and
-              analyzing textual content.
-            </li>
-            <li class="mb-2">
-              <strong>Data Input/Output</strong>: They facilitate the exchange
-              of information between users and programs, as well as between
-              different parts of a program.
-            </li>
-          </ul>
+      <!-- Token Visualizer App -->
+      <div id="root" class="mb-12"></div>
 
-          <h2 class="text-2xl font-bold mt-6 mb-4">
-            Strings in Artificial Intelligence
-          </h2>
-          <p class="mb-4">
-            String manipulation plays a crucial role in modern AI applications
-            and natural language processing:
-          </p>
-          <ul class="list-disc pl-6 mb-4">
-            <li class="mb-4">
-              <strong>Text Preprocessing</strong>: AI models require carefully
-              formatted text input. String operations are essential for:
-              <ul class="list-circle pl-6 mt-2">
-                <li>
-                  <strong>Tokenization</strong> - breaking text into smaller
-                  units
-                </li>
-                <li>
-                  <strong>Normalization</strong> - standardizing text format and
-                  case
-                </li>
-                <li>
-                  <strong>Cleaning</strong> - removing unwanted characters or
-                  formatting
-                </li>
-              </ul>
-            </li>
-            <li class="mb-4">
-              <strong>Prompt Engineering</strong>: When working with large
-              language models, string formatting is crucial for:
-              <ul class="list-circle pl-6 mt-2">
-                <li>Constructing effective prompts</li>
-                <li>Formatting system instructions</li>
-                <li>Processing and validating model responses</li>
-              </ul>
-            </li>
-          </ul>
+      <!-- Output Generation Section -->
+      <div class="prose dark:prose-invert max-w-none mb-12">
+        <h2 class="text-2xl font-bold mt-6 mb-4">Output Generation</h2>
+        <p class="mb-4">
+          Now that we've covered tokens, we can dive into how LLMs generate
+          responses. After all, tokens are the building blocks of text and are
+          foundational for model inputs and outputs. To put it simply, model
+          responses are fundamentally a mathematical process based on
+          probability. When generating a response, LLMs:
+        </p>
+        <ol class="list-decimal pl-6 mb-4">
+          <li>
+            Predict Next Token: Based on the input and learned patterns, the
+            model predicts the most likely next word or token.
+          </li>
+          <li>
+            Autoregressive Generation: The model continues to generate tokens,
+            using its own output as input for subsequent predictions.
+          </li>
+          <li>
+            Probability Distribution: The output layer produces a probability
+            distribution over the vocabulary, allowing the model to select the
+            most appropriate words.
+          </li>
+        </ol>
 
-          <p class="mb-4">
-            The rise of AI and
-            <strong>natural language processing (NLP)</strong> has made string
-            manipulation more important than ever, as it forms the foundation
-            for how we prepare, process, and handle text data for AI
-            applications.
-          </p>
+        <p class="mb-6">
+          By combining these elements, LLMs can effectively process input
+          prompts and generate relevant, coherent responses. However, it's
+          important to note that while LLMs can produce human-like text, they
+          don't truly "understand" in the way humans do. Their responses are
+          based on statistical patterns learned during training rather than
+          genuine comprehension or reasoning.
+        </p>
 
-          <p class="mb-4">
-            <strong
-              ><em
-                >Natural Language Processing (NLP) is a branch of artificial intelligence that helps computers understand, interpret, and generate human language in a natural, functional way.</em
-              ></strong
-            >. It's what allows computers to read text, hear speech, understand
-            it, measure sentiment, and determine which parts are important.
-          </p>
+        <h3 class="text-xl font-bold mt-6 mb-4">Probability Distribution</h3>
+        <p class="mb-4">
+          LLMs generate a probability distribution over their entire vocabulary
+          for each next token prediction. This distribution assigns a
+          probability to each possible token, indicating how likely the model
+          thinks that token is to appear next in the sequence.
+        </p>
 
-          <p class="mb-6">
-            Think of it as the technology that bridges the gap between how
-            humans communicate naturally and how computers process information.
-            Just like how we can understand this sentence in English, NLP helps
-            computers make sense of human languages.
-          </p>
+        <p class="mb-4">
+          The model uses a function to convert raw logits (unnormalized
+          prediction scores) into a proper probability distribution. This
+          ensures that all probabilities sum to 1 and are non-negative.
+        </p>
 
-          <h2 class="text-2xl font-bold mt-6 mb-4">
-            Understanding Tokenization
-          </h2>
-          <p class="mb-4">
-            <strong
-              >Tokenization is the process of breaking down text into smaller
-              pieces called tokens.</strong
+        <h3 class="text-xl font-bold mt-6 mb-4">Sampling Strategies</h3>
+        <p class="mb-4">
+          Various probabilistic sampling methods are used to select the next
+          token:
+        </p>
+        <ul class="list-disc pl-6 mb-4">
+          <li>
+            <strong>Top-k Sampling</strong>: Selecting from the k most likely
+            tokens.
+          </li>
+          <li>
+            <strong>Top-p (Nucleus) Sampling</strong>: Choosing from the
+            smallest set of tokens whose cumulative probability exceeds a
+            threshold p.
+          </li>
+        </ul>
+
+        <h3 class="text-xl font-bold mt-6 mb-4">Statistical Learning</h3>
+        <p class="mb-4">
+          During training, LLMs learn to estimate these probabilities based on
+          patterns in vast amounts of text data. This involves statistical
+          techniques to capture relationships between words and context.
+        </p>
+
+        <h3 class="text-xl font-bold mt-6 mb-4">
+          Perplexity and Cross-Entropy
+        </h3>
+        <p class="mb-6">
+          The quality of an LLM's predictions is often measured using
+          "perplexity", which is derived from the cross-entropy between the
+          model's predicted distribution and the true distribution of tokens.
+        </p>
+
+        <p class="mb-6">
+          In essence, the next token prediction in LLMs is a sophisticated
+          application of probability theory and statistical modeling, allowing
+          these models to generate human-like text by making informed
+          probabilistic choices at each step.
+        </p>
+
+        <h3 class="text-xl font-bold mt-6 mb-4">Learn More</h3>
+        <p class="mb-6">
+          To learn more about Natural Language Processing (NLP) go to the NLP
+          Course by Hugging Face
+          <a
+            href="https://huggingface.co/learn/nlp-course/"
+            class="text-blue-500 hover:text-blue-600"
+            >here</a
+          >.
+        </p>
+
+        <h4 class="text-lg font-bold mt-6 mb-2">Sources</h4>
+        <ul class="list-disc pl-6 mb-6">
+          <li>
+            <a
+              href="https://huggingface.co/blog/alonsosilva/nexttokenprediction"
+              class="text-blue-500 hover:text-blue-600"
+              >Next token prediction with GPT - Hugging Face</a
             >
-            Think of it like breaking a sentence into bite-sized chunks that an
-            AI model can understand. These chunks aren't always just individual
-            words - they can be parts of words, punctuation marks, or even
-            common phrases.
-          </p>
+          </li>
+          <li>
+            <a
+              href="https://responsible-ai-developers.googleblog.com/2024/03/analyzing-next-token-probabilities-in-large-language-models.html"
+              class="text-blue-500 hover:text-blue-600"
+              >Analyzing the next token probabilities in large language
+              models</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://arxiv.org/html/2212.11281v2"
+              class="text-blue-500 hover:text-blue-600"
+              >Language Models Are Better Than Humans at Next-token
+              Prediction</a
+            >
+          </li>
+        </ul>
+      </div>
 
-          <h3 class="text-xl font-bold mt-4 mb-2">
-            Common Tokenization Methods:
-          </h3>
-          <ul class="list-disc pl-6 mb-4">
-            <li class="mb-2">
-              <strong>Word-level Tokenization</strong>: Splits text into
-              individual words based on spaces and punctuation.
-            </li>
-            <li class="mb-2">
-              <strong>Character-level Tokenization</strong>: Breaks text down
-              into individual characters.
-            </li>
-            <li class="mb-2">
-              <strong>Subword Tokenization</strong>: The most common method in
-              modern LLMs, breaking words into meaningful subunits.
-            </li>
-          </ul>
+      <!-- Conclusion -->
+      <div class="prose dark:prose-invert max-w-none">
+        <h2 class="text-2xl font-bold mt-6 mb-4">Conclusion</h2>
+        <p class="mb-4">
+          Understanding strings and text processing is fundamental to modern
+          programming and artificial intelligence. From basic string
+          manipulation to sophisticated tokenization and language modeling,
+          these concepts form the backbone of how computers process and generate
+          human language:
+        </p>
 
-          <div class="bg-blue-50 p-4 rounded-md mb-6">
-            <p class="font-semibold mb-2">Try It Out!</p>
-            <p>
-              Use the interactive Token Visualizer below to experiment with
-              different tokenization methods and see how they work in practice.
-            </p>
-          </div>
-        </div>
+        <ul class="list-disc pl-6 mb-4">
+          <li class="mb-2">
+            <strong>String Fundamentals</strong>: Mastering Python strings is
+            crucial for effective programming. Their immutability and
+            comprehensive set of methods make them powerful tools for text
+            processing and data manipulation.
+          </li>
 
-        <!-- Token Visualizer App -->
-        <div id="root" class="mb-12"></div>
+          <li class="mb-2">
+            <strong>Tokenization</strong>: As a critical preprocessing step in
+            NLP, tokenization bridges the gap between human text and machine
+            understanding. Different tokenization methods (word-based,
+            character-based, or subword-based) offer various trade-offs in terms
+            of vocabulary size, handling unknown words, and computational
+            efficiency.
+          </li>
 
-        <!-- Conclusion -->
-        <div class="prose dark:prose-invert max-w-none">
-          <p class="mb-6">
-            Each of these methods has its own trade-offs in terms of vocabulary
-            size, ability to handle unknown words, and computational efficiency.
-            The choice of tokenization method can significantly impact an LLM's
-            performance, especially in tasks involving multiple languages or
-            specialized domains.
-          </p>
+          <li class="mb-2">
+            <strong>Language Model Processing</strong>: Understanding how LLMs
+            process and generate text through token prediction and probability
+            distributions helps us better utilize these models. The
+            sophisticated interplay of statistical learning, sampling
+            strategies, and probability theory enables these models to generate
+            coherent and contextually appropriate responses.
+          </li>
 
-          <h2 class="text-2xl font-bold mt-6 mb-4">Conclusion</h2>
-          <p class="mb-4">
-            Mastering strings in Python is crucial for effective programming.
-            They are not just for storing text; strings are integral to data
-            processing, user interaction, file handling, and interfacing with
-            external systems. Tokenization is often called a "preprocessing"
-            step in NLP - it's the crucial first stage that enables all other
-            language processing tasks. Formatting, manipulating, and
-            transforming text is an important for of AI. Learning how to master
-            text and string manipulation with Python will make you a powerful AI
-            developer.
-          </p>
-        </div>
+          <li class="mb-2">
+            <strong>Practical Applications</strong>: From text preprocessing and
+            prompt engineering to model evaluation through perplexity metrics,
+            these concepts have direct applications in building and working with
+            AI systems.
+          </li>
+        </ul>
+
+        <p class="mb-4">
+          As AI continues to evolve, the ability to effectively work with text
+          data becomes increasingly valuable. Whether you're developing AI
+          applications, processing natural language, or building text-based
+          interfaces, a solid understanding of these concepts will make you a
+          more effective developer in the age of AI.
+        </p>
       </div>
     </div>
 
@@ -500,7 +651,7 @@
         );
 
         return (
-          <div className="max-w-4xl mx-auto bg-white dark:bg-github-dark rounded-lg shadow-lg p-6 dark-transition">
+          <div className="mb-12">
             <h1 className="text-2xl font-bold mb-6 dark:text-white">
               Token Visualizer
             </h1>
