@@ -14,12 +14,142 @@
 
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      // Add dark mode configuration to Tailwind
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            typography: {
+              invert: {
+                css: {
+                  "--tw-prose-body": "rgb(229, 231, 235)",
+                  "--tw-prose-headings": "rgb(255, 255, 255)",
+                  "--tw-prose-links": "rgb(96, 165, 250)",
+                  "--tw-prose-bold": "rgb(255, 255, 255)",
+                  "--tw-prose-counters": "rgb(229, 231, 235)",
+                  "--tw-prose-bullets": "rgb(229, 231, 235)",
+                  "--tw-prose-hr": "rgb(75, 85, 99)",
+                  "--tw-prose-quotes": "rgb(229, 231, 235)",
+                  "--tw-prose-quote-borders": "rgb(75, 85, 99)",
+                  "--tw-prose-captions": "rgb(156, 163, 175)",
+                  "--tw-prose-code": "rgb(255, 255, 255)",
+                  "--tw-prose-pre-code": "rgb(229, 231, 235)",
+                  "--tw-prose-pre-bg": "rgb(55, 65, 81)",
+                },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Dark mode transitions */
+      .dark-transition {
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      /* Dark mode text colors */
+      .dark .text-gray-500 {
+        color: rgb(209, 213, 219);
+      }
+
+      .dark .text-gray-600 {
+        color: rgb(229, 231, 235);
+      }
+
+      .dark label,
+      .dark .font-medium {
+        color: rgb(229, 231, 235);
+      }
+
+      .dark textarea,
+      .dark select {
+        color: rgb(229, 231, 235);
+      }
+
+      .dark .bg-blue-50 {
+        background-color: rgb(30, 58, 138);
+        color: rgb(229, 231, 235);
+      }
+
+      /* Educational content dark mode styles */
+      .dark .prose {
+        color: rgb(229, 231, 235);
+      }
+
+      .dark .prose strong {
+        color: rgb(255, 255, 255);
+      }
+
+      .dark .prose h1,
+      .dark .prose h2,
+      .dark .prose h3 {
+        color: rgb(255, 255, 255);
+      }
+
+      .dark .prose ul > li::before {
+        background-color: rgb(209, 213, 219);
+      }
+
+      .dark .prose a {
+        color: rgb(96, 165, 250);
+      }
+
+      .dark .prose blockquote {
+        color: rgb(229, 231, 235);
+        border-left-color: rgb(75, 85, 99);
+      }
+
+      .dark .prose code {
+        color: rgb(255, 255, 255);
+        background-color: rgb(55, 65, 81);
+      }
+
+      .dark .prose em {
+        color: rgb(229, 231, 235);
+      }
+    </style>
   </head>
-  <body class="bg-gray-100 min-h-screen">
+  <body class="bg-gray-100 dark:bg-gray-900 min-h-screen dark-transition">
+    <!-- Dark Mode Toggle -->
+    <div class="fixed top-4 right-4 z-50">
+      <button
+        onclick="document.documentElement.classList.toggle('dark')"
+        class="bg-gray-200 dark:bg-gray-700 p-2 rounded-lg shadow-lg hover:bg-gray-300 dark:hover:bg-gray-600 dark-transition"
+        aria-label="Toggle dark mode"
+      >
+        <svg
+          class="w-6 h-6 hidden dark:block text-yellow-300"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <!-- Sun icon -->
+          <path
+            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+          />
+        </svg>
+        <svg
+          class="w-6 h-6 block dark:hidden text-gray-800"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <!-- Moon icon -->
+          <path
+            d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+          />
+        </svg>
+      </button>
+    </div>
+
     <!-- Educational Content Section -->
     <div class="max-w-4xl mx-auto pt-8 px-6">
-      <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
-        <div class="prose max-w-none">
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8 dark-transition"
+      >
+        <div class="prose dark:prose-invert max-w-none">
           <h1 class="text-3xl font-bold mb-6">
             Understanding Python Strings and Tokenization
           </h1>
@@ -164,8 +294,10 @@
 
     <!-- Conclusion Section -->
     <div class="max-w-4xl mx-auto px-6 pb-8">
-      <div class="bg-white rounded-lg shadow-lg p-6 mt-8">
-        <div class="prose max-w-none">
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mt-8 dark-transition"
+      >
+        <div class="prose dark:prose-invert max-w-none">
           <p class="mb-6">
             Each of these methods has its own trade-offs in terms of vocabulary
             size, ability to handle unknown words, and computational efficiency.
@@ -359,8 +491,10 @@
         );
 
         return (
-          <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">
-            <h1 className="text-2xl font-bold mb-6">Token Visualizer</h1>
+          <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 dark-transition">
+            <h1 className="text-2xl font-bold mb-6 dark:text-white">
+              Token Visualizer
+            </h1>
 
             <div className="space-y-4">
               <div className="space-y-2">
@@ -370,7 +504,7 @@
                 <select
                   value={method}
                   onChange={(e) => setMethod(e.target.value)}
-                  className="w-full p-2 border rounded-md bg-white"
+                  className="w-full p-2 border rounded-md bg-white dark:bg-gray-700"
                 >
                   {Object.entries(tokenizationMethods).map(
                     ([key, { name }]) => (
@@ -389,7 +523,7 @@
                 <textarea
                   value={text}
                   onChange={(e) => setText(e.target.value)}
-                  className="w-full h-32 p-2 border rounded-md font-mono"
+                  className="w-full h-32 p-2 border rounded-md font-mono bg-white dark:bg-gray-700"
                   placeholder="Type or paste text here..."
                 />
               </div>
@@ -404,7 +538,7 @@
                   </span>
                 </div>
 
-                <div className="border rounded-md p-4 bg-gray-50 min-h-32 overflow-auto">
+                <div className="border rounded-md p-4 bg-gray-50 dark:bg-gray-700 min-h-32 overflow-auto">
                   <TokenDisplay tokens={tokens} />
                 </div>
               </div>
@@ -413,7 +547,7 @@
                 <label className="block text-sm font-medium">
                   Token Details:
                 </label>
-                <div className="border rounded-md p-4 bg-gray-50 max-h-64 overflow-auto">
+                <div className="border rounded-md p-4 bg-gray-50 dark:bg-gray-700 max-h-64 overflow-auto">
                   <div className="space-y-1">
                     {tokens.map((token) => (
                       <div
