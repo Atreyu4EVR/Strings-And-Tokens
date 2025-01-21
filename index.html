@@ -21,6 +21,13 @@
         darkMode: "class",
         theme: {
           extend: {
+            colors: {
+              github: {
+                dark: "#0d1117",
+                input: "#151b23",
+                border: "#30363d",
+              },
+            },
             typography: {
               invert: {
                 css: {
@@ -48,7 +55,8 @@
     <style>
       /* Dark mode transitions */
       .dark-transition {
-        transition: background-color 0.3s ease, color 0.3s ease;
+        transition: background-color 0.3s ease, color 0.3s ease,
+          border-color 0.3s ease;
       }
 
       /* Dark mode text colors */
@@ -68,11 +76,18 @@
       .dark textarea,
       .dark select {
         color: rgb(229, 231, 235);
+        background-color: #151b23;
+        border-color: #30363d;
+      }
+
+      .dark .border {
+        border-color: #30363d;
       }
 
       .dark .bg-blue-50 {
         background-color: rgb(30, 58, 138);
         color: rgb(229, 231, 235);
+        border: 1px solid #30363d;
       }
 
       /* Educational content dark mode styles */
@@ -100,12 +115,13 @@
 
       .dark .prose blockquote {
         color: rgb(229, 231, 235);
-        border-left-color: rgb(75, 85, 99);
+        border-left-color: #30363d;
       }
 
       .dark .prose code {
         color: rgb(255, 255, 255);
-        background-color: rgb(55, 65, 81);
+        background-color: #151b23;
+        border: 1px solid #30363d;
       }
 
       .dark .prose em {
@@ -113,7 +129,7 @@
       }
     </style>
   </head>
-  <body class="bg-gray-100 dark:bg-gray-900 min-h-screen dark-transition">
+  <body class="bg-gray-100 dark:bg-github-dark min-h-screen dark-transition">
     <!-- Dark Mode Toggle -->
     <div class="fixed top-4 right-4 z-50">
       <button
@@ -144,12 +160,13 @@
       </button>
     </div>
 
-    <!-- Educational Content Section -->
-    <div class="max-w-4xl mx-auto pt-8 px-6">
+    <!-- Main Content Container -->
+    <div class="max-w-4xl mx-auto pt-8 px-6 pb-8">
       <div
-        class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8 dark-transition"
+        class="bg-white dark:bg-github-dark rounded-lg shadow-lg p-6 dark-transition"
       >
-        <div class="prose dark:prose-invert max-w-none">
+        <!-- Educational Content -->
+        <div class="prose dark:prose-invert max-w-none mb-12">
           <h1 class="text-3xl font-bold mb-6">
             Understanding Python Strings and Tokenization
           </h1>
@@ -286,17 +303,11 @@
             </p>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Token Visualizer App -->
-    <div id="root"></div>
+        <!-- Token Visualizer App -->
+        <div id="root" class="mb-12"></div>
 
-    <!-- Conclusion Section -->
-    <div class="max-w-4xl mx-auto px-6 pb-8">
-      <div
-        class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mt-8 dark-transition"
-      >
+        <!-- Conclusion -->
         <div class="prose dark:prose-invert max-w-none">
           <p class="mb-6">
             Each of these methods has its own trade-offs in terms of vocabulary
@@ -491,7 +502,7 @@
         );
 
         return (
-          <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 dark-transition">
+          <div className="max-w-4xl mx-auto bg-white dark:bg-github-dark rounded-lg shadow-lg p-6 dark-transition">
             <h1 className="text-2xl font-bold mb-6 dark:text-white">
               Token Visualizer
             </h1>
@@ -504,7 +515,7 @@
                 <select
                   value={method}
                   onChange={(e) => setMethod(e.target.value)}
-                  className="w-full p-2 border rounded-md bg-white dark:bg-gray-700"
+                  className="w-full p-2 border dark:border-github-border rounded-md bg-white dark:bg-github-input"
                 >
                   {Object.entries(tokenizationMethods).map(
                     ([key, { name }]) => (
@@ -523,7 +534,7 @@
                 <textarea
                   value={text}
                   onChange={(e) => setText(e.target.value)}
-                  className="w-full h-32 p-2 border rounded-md font-mono bg-white dark:bg-gray-700"
+                  className="w-full h-32 p-2 border dark:border-github-border rounded-md font-mono bg-white dark:bg-github-input"
                   placeholder="Type or paste text here..."
                 />
               </div>
@@ -538,7 +549,7 @@
                   </span>
                 </div>
 
-                <div className="border rounded-md p-4 bg-gray-50 dark:bg-gray-700 min-h-32 overflow-auto">
+                <div className="border dark:border-github-border rounded-md p-4 bg-gray-50 dark:bg-github-input min-h-32 overflow-auto">
                   <TokenDisplay tokens={tokens} />
                 </div>
               </div>
@@ -547,7 +558,7 @@
                 <label className="block text-sm font-medium">
                   Token Details:
                 </label>
-                <div className="border rounded-md p-4 bg-gray-50 dark:bg-gray-700 max-h-64 overflow-auto">
+                <div className="border dark:border-github-border rounded-md p-4 bg-gray-50 dark:bg-github-input max-h-64 overflow-auto">
                   <div className="space-y-1">
                     {tokens.map((token) => (
                       <div
